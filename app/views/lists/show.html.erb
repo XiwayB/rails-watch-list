@@ -4,4 +4,18 @@
       <%= @list.name %>
     </div>
   </div>
+
+    <div class="row">
+      <div class="col-12">
+        <% @list.bookmarks.each do |bookmark| %>
+          <%= bookmark.comment %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+      </div>
+    </div>
 </div>
