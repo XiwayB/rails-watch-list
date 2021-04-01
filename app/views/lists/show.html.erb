@@ -1,27 +1,53 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1><%= @list.name %></h1>
+<% if @list.imageUrl.nil? %>
+    <div class="show-banner" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2040&q=80')">
+        <h3><%= @list.name %></h3>
     </div>
+<% else %>
+    <div class="show-banner" style="background-image: url('<%= @list.imageUrl %>')">
+        <h3><%= @list.name %></h3>
+    </div>
+<% end %>
+
+<div class="button-delete">
+    <%= link_to "Delete the list", list_path(@list), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"} %>
+</div>
+
+<div class="container">
+    <div class="row">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-6">
+          <div class="card-movie">
+          <div class="card-poster">
+              <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+          </div>
+          <div class="card-description">
+            <div class="card-title">
+              <h5><%= bookmark.movie.title %></h5>
+              <p> <%= bookmark.movie.rating %> ⭐️</p>
+            </div>
+            <div class="card-overview">
+              <p> <%= bookmark.movie.overview %> </p>
+            </div>
+            <div class="card-review">
+              <p> <strong>Review:</strong> <%= bookmark.comment %></p>
+              <%= link_to "Delete", bookmark_path(bookmark), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"}  %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
   </div>
 
     <div class="row">
       <div class="col-12">
-        <% @list.bookmarks.each do |bookmark| %>
-          <p><%= bookmark.comment %></p>
+        <div class="form">
+         <h3>Add a new movie</h3>
+        <%= simple_form_for [ @list, @bookmark ] do |f| %>
+          <%= f.input :comment %>
+          <%= f.association :movie %>
+          <%= f.submit "Add movie", class: "btn btn-primary" %>
         <% end %>
-      </div>
+        </div>
     </div>
-
-    <div class="row">
-    <div class="col-12">
-      <h3>Add a new movie</h3>
-      <%= simple_form_for [ @list, @bookmark ] do |f| %>
-        <%= f.input :comment %>
-        <%= f.association :list %>
-        <%= f.association :movie %>
-        <%= f.submit "Add movie", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
+  </div>
 </div>

@@ -10,4 +10,17 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/button";
 @import "pages/index";
+
+.container {
+  margin: 24px auto;
+}
+
+.row {
+  margin-top: 90px;
+  img {
+    width: 100%;
+    height: 200px;
+  }
+}

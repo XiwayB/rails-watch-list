@@ -1,0 +1,52 @@
+.card {
+  margin: 12px;
+  background-size: cover;
+  height: 240px;
+  width: 350px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  h3 {
+    margin-top: 90px;
+  }
+    a {
+      text-decoration: none;
+      text-align: center;
+      color: white;
+    }
+
+}
+
+.card-movie {
+  margin: 12px;
+  border-radius: 5px;
+  width: 430px;
+  height: 500px;
+}
+
+.card-poster {
+  background-size: cover;
+}
+
+.card-description {
+  padding: 12px;
+  background-color: #F8F8F8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 250px;
+  h5 {
+    font-weight: bold;
+  }
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.card-review {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+}

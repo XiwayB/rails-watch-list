@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
-    def index
+
+  def index
     @lists = List.all
   end
 
@@ -21,10 +22,16 @@ class ListsController < ApplicationController
     end
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to root_path
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :imageUrl)
   end
 
 end

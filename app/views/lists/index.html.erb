@@ -1,11 +1,22 @@
+<div class="home-banner">
+  <h1><span id="banner-typed-text"></span></h1>
+</div>
+
 <div class="container">
   <div class="row">
     <% @lists.each do |list| %>
-      <div class="col-12">
-        <%= link_to list.name, list_path(list) %>
+      <div class="col-4">
+        <% if list.imageUrl.nil? %>
+          <div class="card" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2040&q=80')">
+            <h3><%= link_to list.name, list_path(list)%></h3>
+          </div>
+        <% else %>
+        <div class="card" style= "background-image: url('<%= list.imageUrl %>')">
+          <h3><%= link_to list.name, list_path(list) %></h3>
+        </div>
+        <% end %>
       </div>
     <% end %>
-    <%= link_to "Create a new list", new_list_path %>
   </div>
 </div>
 
