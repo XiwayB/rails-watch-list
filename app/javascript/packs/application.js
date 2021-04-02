@@ -12,13 +12,13 @@ import 'bootstrap';
 
 import { loadDynamicBannerText } from '../components/banner';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { select } from '../components/form';
+import { initselect2 } from '../components/form';
 
 
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   loadDynamicBannerText();
-  select();
+  initselect2();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference

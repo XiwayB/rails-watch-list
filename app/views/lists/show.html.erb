@@ -50,7 +50,7 @@
          <h3>Add a new movie</h3>
         <%= simple_form_for [ @list, @bookmark ] do |f| %>
           <%= f.input :comment %>
-           <%= f.input :movie, collection: Movie.all, input_html: { class: "select" } %>
+           <%= f.association :movie, input_html: { class: "select2" } %>
           <%= f.submit "Add movie", class: "btn btn-primary" %>
         <% end %>
         </div>
