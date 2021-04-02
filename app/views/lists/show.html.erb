@@ -49,8 +49,8 @@
         <div class="form">
          <h3>Add a new movie</h3>
         <%= simple_form_for [ @list, @bookmark ] do |f| %>
-          <%= f.input :comment %>
-           <%= f.association :movie, input_html: { class: "select2" } %>
+          <%= f.input :comment, placeholder: 'Add a comment' %>
+           <%= f.association :movie, input_html: { class: "select2" }, placeholder: 'Select a movie' %>
           <%= f.submit "Add movie", class: "btn btn-primary" %>
         <% end %>
         </div>
