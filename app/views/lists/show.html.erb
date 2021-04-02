@@ -13,6 +13,9 @@
 </div>
 
 <div class="container">
+  <div class="card-show-title">
+    <h1>Movies 🎬</h1>
+  </div>
     <div class="row">
       <% @list.bookmarks.each do |bookmark| %>
         <div class="col-6">
@@ -28,8 +31,10 @@
             <div class="card-overview">
               <p> <%= bookmark.movie.overview %> </p>
             </div>
+            <hr>
+              <p><strong>Review</strong></p>
             <div class="card-review">
-              <p> <strong>Review:</strong> <%= bookmark.comment %></p>
+              <p><%= bookmark.comment %></p>
               <%= link_to "Delete", bookmark_path(bookmark), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"}  %>
             </div>
           </div>
@@ -40,6 +45,7 @@
 
     <div class="row">
       <div class="col-12">
+        <hr>
         <div class="form">
          <h3>Add a new movie</h3>
         <%= simple_form_for [ @list, @bookmark ] do |f| %>
