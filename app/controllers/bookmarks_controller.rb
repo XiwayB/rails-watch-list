@@ -11,7 +11,7 @@ def create
   if @bookmark.save
     redirect_to list_path(@list)
   else
-    render :new
+    render template: "lists/show"
   end
 end
 
