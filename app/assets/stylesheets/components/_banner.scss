@@ -32,3 +32,23 @@
   text-align: center;
   padding-top: 30vh;
 }
+
+.banner-btn {
+  margin-top: 55px;
+}
+
+.banner-link {
+  color: white;
+  background-color: #f4a261;
+  border-radius: 5px;
+  font-weight: lighter;
+  padding: 15px;
+  transition: background 0.3s ease;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.banner-arrow {
+  margin-top: 8px;
+}
