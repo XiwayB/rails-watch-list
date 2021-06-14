@@ -8,9 +8,8 @@
     </div>
 <% end %>
 
-<div class="button-delete">
-    <%= link_to "Delete the list", list_path(@list), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"} %>
-</div>
+<button class="button-delete btn btn-danger">Delete the list</button>
+<%= link_to "", list_path(@list), method: :delete, class: "delete-link", class: "hidden" %>
 
 <div class="container">
   <div class="card-show-title">
@@ -35,7 +34,10 @@
               <p><strong>Review</strong></p>
             <div class="card-review">
               <p><%= bookmark.comment %></p>
-              <%= link_to "Delete", bookmark_path(bookmark), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"}  %>
+            <%= link_to "Delete", bookmark_path(bookmark), class:"btn btn-danger", method: :delete, data: {confirm: "😢 Are you sure?"}  %>
+
+  <!-- <button id="button-delete" class="button-delete btn btn-danger">Delete</button>
+<%= link_to "", bookmark_path(bookmark), method: :delete, id: "delete-link", class: "hidden" %> -->
             </div>
           </div>
         </div>
