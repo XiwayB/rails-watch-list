@@ -17,11 +17,9 @@ import { initSortable } from '../plugins/initSortable';
 
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
-});
-
-initselect2();
-
-initSweetalert('.button-delete',{
+  initSortable();
+  initselect2();
+  initSweetalert('.button-delete',{
   title: "Are you sure? 😢",
   text: "This action cannot be reversed",
   icon: "warning",
@@ -42,10 +40,14 @@ initSweetalert('.button-delete',{
     }
   }
 }, (value) => {
-  if(value) {
-    const link = document.querySelector('.delete-link');
-    link.click();
-  }
+    if(value) {
+      const link = document.querySelector('#delete-link');
+      link.click();
+    }
+    window.location.reload()
+  });
 });
 
-  initSortable();
+initselect2();
+
+

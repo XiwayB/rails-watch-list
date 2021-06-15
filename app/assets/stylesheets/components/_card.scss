@@ -57,5 +57,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
+  position: relative;
 }
+
+.delete-movie {
+  position: absolute;
+  right: -6%;
+  bottom: -31%;
+}
+
 
