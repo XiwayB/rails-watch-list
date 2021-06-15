@@ -10,7 +10,6 @@ require("channels")
 
 import 'bootstrap';
 
-import { loadDynamicBannerText } from '../components/banner';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initselect2 } from '../components/form';
 import { initSweetalert } from '../plugins/initSweetalert';
@@ -18,8 +17,6 @@ import { initSortable } from '../plugins/initSortable';
 
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
-  loadDynamicBannerText();
-  // initselect2();
 });
 
 initselect2();
@@ -29,13 +26,6 @@ initSweetalert('.button-delete',{
   text: "This action cannot be reversed",
   icon: "warning",
   buttons: {
-    confirm: {
-      text: "OK",
-      value: true,
-      visible: true,
-      className: "",
-      closeModal: true
-      },
     cancel: {
       text: "Cancel",
       value: false,
@@ -43,6 +33,13 @@ initSweetalert('.button-delete',{
       className: "",
       closeModal: true,
     },
+    confirm: {
+      text: "OK",
+      value: true,
+      visible: true,
+      className: "",
+      closeModal: true
+    }
   }
 }, (value) => {
   if(value) {
