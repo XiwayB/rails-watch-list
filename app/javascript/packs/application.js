@@ -44,7 +44,33 @@ document.addEventListener('turbolinks:load', () => {
       const link = document.querySelector('#delete-link');
       link.click();
     }
-    window.location.reload()
+  });
+
+  initSweetalert('.delete-movie',{
+  title: "Are you sure? 😢",
+  text: "This action cannot be reversed",
+  icon: "warning",
+  buttons: {
+    cancel: {
+      text: "Cancel",
+      value: false,
+      visible: true,
+      className: "",
+      closeModal: true,
+    },
+    confirm: {
+      text: "OK",
+      value: true,
+      visible: true,
+      className: "",
+      closeModal: true
+    }
+  }
+}, (value) => {
+    if(value) {
+      const bookmark = document.querySelector('#delete-bookmark');
+      bookmark.click();
+    }
   });
 });
 

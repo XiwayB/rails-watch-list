@@ -6,7 +6,6 @@ const initSweetalert = (selector, options = {}, callback = () => {}) =>
   if (swalButton.length) {
     swalButton.forEach((btn) => {
       btn.addEventListener('click', (event) => {
-        console.log(event);
         swal(options).then(callback);
       });
     })

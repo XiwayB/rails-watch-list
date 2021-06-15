@@ -34,8 +34,8 @@
               <p><strong>Review</strong></p>
             <div class="card-review">
               <p><%= bookmark.comment %></p>
-            <button class="button-delete delete-movie btn btn-danger">Delete</button>
-            <%= link_to "", bookmark_path(bookmark), method: :delete, id: "delete-link", class: "hidden" %>
+            <button class="delete-movie btn btn-danger">Delete</button>
+            <%= link_to "", bookmark_path(bookmark), method: :delete, id:"delete-bookmark", class: "hidden" %>
             </div>
           </div>
         </div>
