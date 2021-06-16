@@ -36,9 +36,10 @@ document.addEventListener('turbolinks:load', () => {
       value: true,
       visible: true,
       className: "",
-      closeModal: true
+      closeModal: true,
+      onOpen: () => Swal.getConfirmButton().focus()
     }
-  }
+  },
 }, (value) => {
     if(value) {
       const link = document.querySelector('#delete-link');

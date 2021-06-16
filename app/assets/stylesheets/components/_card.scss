@@ -15,7 +15,6 @@
       text-align: center;
       color: white;
     }
-
 }
 
 .card-show-title {
@@ -23,10 +22,14 @@
   text-align: center;
 }
 
+.cards-movie {
+  margin-left: 35px;
+}
+
 .card-movie {
-  margin: 12px;
+  margin: 50px 46px 50px;
   border-radius: 5px;
-  width: 400px;
+  width: 421px;
   height: 646px;
 }
 
@@ -66,4 +69,24 @@
   top: -31%;
 }
 
+/*Media Queries*/
 
+@media(max-width: 992px) {
+  .card-movie {
+    margin: 48px 76px;
+  }
+
+  .card {
+    margin: 5px;
+  }
+}
+
+@media(max-width: 768px) {
+  .card-movie {
+    margin: 39px 9px
+  }
+
+  .card {
+    margin: 12px 0px 12px 97px
+  }
+}

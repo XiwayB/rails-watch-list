@@ -1,4 +1,3 @@
-
 .home-banner {
   background-image: asset-url('movie_banner.jpeg');
   background-size: cover;
@@ -33,18 +32,22 @@
   padding-top: 30vh;
 }
 
-.banner-link {
-  color: white;
-  background-color: #f4a261;
-  border-radius: 5px;
-  font-weight: lighter;
-  padding: 15px;
-  transition: background 0.3s ease;
-  &:hover{
-    text-decoration: none;
-  }
-}
-
 .banner-arrow {
   margin-top: 8px;
 }
+
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+  .home-banner {
+    background-position-x: -303px;
+    h1{
+      font-size: 36px;
+      color: white;
+    }
+  }
+
+}
+
+
